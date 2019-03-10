@@ -8,11 +8,11 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 
 module.exports = {
     entry: { // https://webpack.js.org/concepts/entry-points/
-        main: './src/index.js'
+        index: './src/index.js'
     },
     output: { // https://webpack.js.org/concepts/output/
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js'
+        filename: '[name].bundle.js'
     },
     module: { // https://webpack.js.org/concepts/loaders/
         rules: [
@@ -55,7 +55,7 @@ module.exports = {
             title: 'Webpack v4 Scaffold (production)'
         }),
         new MiniCssExtractPlugin({ // https://webpack.js.org/plugins/mini-css-extract-plugin
-            filename: "[name].css",
+            filename: "[name].bundle.css",
             chunkFilename: "[id].css"
         }),
         new webpack.HotModuleReplacementPlugin() // https://webpack.js.org/plugins/hot-module-replacement-plugin
