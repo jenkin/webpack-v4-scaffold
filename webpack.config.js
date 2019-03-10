@@ -79,6 +79,9 @@ module.exports = {
         progress: true,
         compress: true,
         hot: true,
-        inline: true
+        inline: true,
+        before(app, server) { // https://github.com/webpack/webpack-dev-server/issues/1271#issuecomment-379792541
+            server._watch(`./src/*.html`);
+        }
     }
 }
