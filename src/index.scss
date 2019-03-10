@@ -1,0 +1,7 @@
+@import './common.css';
+
+p {
+    &.bold {
+        font-weight: bold;
+    }
+}
